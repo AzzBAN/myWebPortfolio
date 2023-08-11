@@ -8,7 +8,7 @@ export default function HomePage() {
           <div className="w-[80%] flex max-sm:flex-col-reverse flex-row justify-between items-center">
             <div className="flex flex-col justify-center text-left text-5xl">
               <p className="font-bold">Hello There,</p>
-              <p>Im Azhar!!</p>
+              <p>I&apos;m Azhar!!</p>
               <div className="mt-5">
                 <p className="text-xl">
                   I Am a <span className="text-yellow-500">Software Engineer</span>

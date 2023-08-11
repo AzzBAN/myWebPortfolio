@@ -31,11 +31,13 @@ export default function Navbar() {
 
               {/* navbar Left */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-x-3">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <img className="h-8 w-8 rounded-full" src="/ProfilePhoto.JPEG" alt="" />
-                </div>
+                </div> */}
                 <div className="flex items-center">
-                  <a>AzzBAN.me</a>
+                  <a>
+                    <span className="font-bold">A</span>zz<span className="font-bold">BAN</span> WebPortfolio
+                  </a>
                 </div>
               </div>
               {/* end Navbar Left */}
