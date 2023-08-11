@@ -84,7 +84,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-shrink-0 h-[50%] w-[50%]">
+            <div className="flex flex-shrink-1 h-[50%] w-[50%]">
               <img className="rounded-full" src="/ProfilePhoto.JPEG" alt="" />
             </div>
             {/* <p>Welcome to AzzBAN Web Portfolio</p> */}
