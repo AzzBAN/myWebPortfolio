@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HeadScript from "./script";
 
 export default function HeadMeta({ title, description, keywords }) {
   return (
@@ -7,13 +8,13 @@ export default function HeadMeta({ title, description, keywords }) {
       <meta name="description" content={description} />
       <meta name="keyword" content={keywords} />
       <link rel="icon" href="/favicon-pgd.png" />
-      <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
+      <HeadScript></HeadScript>
     </Head>
   );
 }
 
 HeadMeta.defaultProps = {
-  title: "Home",
+  title: "AzzBAN | WebPortfolio",
   description: "Welcome to my Web Portfolio",
   keywords: "Azzban WebPortfolio - Azhar Baihaqi Nugraha",
 };
