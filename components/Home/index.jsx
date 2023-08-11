@@ -5,7 +5,7 @@ export default function HomePage() {
     <>
       <div className="bg-slate-700 h-[calc(100%-64px)] top-0 w-full -z-10">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-full">
-          <div className="w-[80%] flex justify-between">
+          <div className="w-[80%] flex max-sm:flex-col-reverse flex-row justify-between items-center">
             <div className="flex flex-col justify-center text-left text-5xl">
               <p className="font-bold">Hello There,</p>
               <p>Im Azhar!!</p>
@@ -84,7 +84,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-shrink-1 h-[50%] w-[50%]">
+            <div className="flex flex-shrink-1 w-[40%] sm:pl-3 max-sm:mb-6 max-sm:w-[60%] md:max-lg:w-[55%]">
               <img className="rounded-full" src="/ProfilePhoto.JPEG" alt="" />
             </div>
             {/* <p>Welcome to AzzBAN Web Portfolio</p> */}
