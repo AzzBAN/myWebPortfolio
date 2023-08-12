@@ -90,6 +90,9 @@ export default function HomePage() {
             {/* <p>Welcome to AzzBAN Web Portfolio</p> */}
           </div>
         </div>
+        <div class="flex justify-center items-center w-full h-7 bg-slate-800">
+          <p className="text-center">@2022 Azhar Baihaqi Nugraha</p>
+        </div>
       </div>
     </>
   );
