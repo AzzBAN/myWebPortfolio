@@ -7,8 +7,8 @@ export default function HeadMeta({ title, description, keywords }) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keyword" content={keywords} />
-      <link rel="icon" href="/favicon-pgd.png" />
-      <HeadScript></HeadScript>
+      <link rel="icon" href="/icon.svg" type="image/x-icon" />
+      {/* <HeadScript></HeadScript> */}
     </Head>
   );
 }

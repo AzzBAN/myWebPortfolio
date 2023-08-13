@@ -13,8 +13,10 @@
     "@heroicons/react": "^2.0.18",
     "bootstrap": "^5.3.1",
     "next": "13.4.13",
+    "particles.js": "^2.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-particles-js": "^3.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
