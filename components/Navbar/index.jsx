@@ -1,21 +1,32 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-
-const navigation = [
-  { name: "Home", href: "/home", current: true },
-  // { name: "Team", href: "#", current: false },
-  // { name: "Projects", href: "#", current: false },
-  // { name: "Calendar", href: "#", current: false },
-];
+import { useState } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+  const [navigation, setNavigation] = useState([
+    { name: "Home", href: "#home", current: true },
+    { name: "About", href: "#about", current: false },
+    // { name: "Projects", href: "#", current: false },
+    // { name: "Calendar", href: "#", current: false },
+  ]);
+  const handleNavigationClick = (index) => {
+    const updatedNavigation = navigation.map((item, i) => {
+      if (i === index) {
+        return { ...item, current: true };
+      } else {
+        return { ...item, current: false };
+      }
+    });
+
+    setNavigation(updatedNavigation);
+  };
   return (
-    <Disclosure as="nav" className="bg-gray-800 z-10 sticky top-0 shadow-md">
+    <Disclosure as="nav" className="bg-gray-800 z-10 sticky w-full top-0 shadow-md">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -69,12 +80,13 @@ export default function Navbar() {
                 </button>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation.map((item, index) => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "rounded-md px-3 py-2 text-sm font-medium")}
                         aria-current={item.current ? "page" : undefined}
+                        onClick={() => handleNavigationClick(index)}
                       >
                         {item.name}
                       </a>
