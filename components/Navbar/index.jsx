@@ -26,7 +26,7 @@ export default function Navbar() {
     setNavigation(updatedNavigation);
   };
   return (
-    <Disclosure as="nav" className="bg-gray-800 z-10 sticky w-full top-0 shadow-md">
+    <Disclosure as="nav" className="bg-gray-800 z-10 fixed w-full top-0 shadow-md">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -151,6 +151,7 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded-md px-3 py-2 text-base font-medium")}
                   aria-current={item.current ? "page" : undefined}
+                  onClick={() => handleNavigationClick(index)}
                 >
                   {item.name}
                 </Disclosure.Button>
