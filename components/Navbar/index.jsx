@@ -1,30 +1,45 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
-  const [navigation, setNavigation] = useState([
-    { name: "Home", href: "#home", current: true },
-    { name: "About", href: "#about", current: false },
-    // { name: "Projects", href: "#", current: false },
-    // { name: "Calendar", href: "#", current: false },
-  ]);
-  const handleNavigationClick = (index) => {
-    const updatedNavigation = navigation.map((item, i) => {
-      if (i === index) {
-        return { ...item, current: true };
-      } else {
-        return { ...item, current: false };
-      }
-    });
+export default function Navbar({ navigation, onClickNavbar }) {
+  // const [navigation, setNavigation] = useState([
+  //   { name: "Home", href: "#home", current: false },
+  //   { name: "About", href: "#about", current: false },
+  //   // { name: "Projects", href: "#", current: false },
+  //   // { name: "Calendar", href: "#", current: false },
+  // ]);
+  // const handleNavigationClick = (index) => {
+  //   const updatedNavigation = navigation.map((item, i) => {
+  //     if (i === index) {
+  //       return { ...item, current: true };
+  //     } else {
+  //       return { ...item, current: false };
+  //     }
+  //   });
 
-    setNavigation(updatedNavigation);
-  };
+  //   setNavigation(updatedNavigation);
+  // };
+
+  // useEffect(() => {
+  //   // Get the current URL hash
+  //   const currentHash = window.location.hash;
+
+  //   // Update the navigation state based on the current hash
+  //   const updatedNavigation = navigation.map((item) => {
+  //     return {
+  //       ...item,
+  //       current: item.href === currentHash || (currentHash === "" && item.name === "Home"),
+  //     };
+  //   });
+  //   setNavigation(updatedNavigation);
+  // }, []);
+
   return (
     <Disclosure as="nav" className="bg-gray-800 z-10 fixed w-full top-0 shadow-md">
       {({ open }) => (
@@ -86,7 +101,7 @@ export default function Navbar() {
                         href={item.href}
                         className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "rounded-md px-3 py-2 text-sm font-medium")}
                         aria-current={item.current ? "page" : undefined}
-                        onClick={() => handleNavigationClick(index)}
+                        onClick={() => onClickNavbar(index)}
                       >
                         {item.name}
                       </a>
@@ -144,14 +159,14 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded-md px-3 py-2 text-base font-medium")}
                   aria-current={item.current ? "page" : undefined}
-                  onClick={() => handleNavigationClick(index)}
+                  onClick={() => onClickNavbar(index)}
                 >
                   {item.name}
                 </Disclosure.Button>

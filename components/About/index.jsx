@@ -1,7 +1,7 @@
-export default function About() {
+export default function About(props) {
   return (
     <>
-      <section class="about" id="about">
+      <section ref={props.sectionRef} class="about" id="about">
         <div className="bg-slate-800 h-[calc(100vh)] top-0 w-full -z-10 pt-6">
           <div className="flex max-lg:flex-col justify-center items-center gap-x-36 h-full p-20 px-[15%]">
             <div className="w-[90%] max-sm:w-[65%] max-lg:w-[45%] max-w-sm flex-shrink-1 flex justify-center">

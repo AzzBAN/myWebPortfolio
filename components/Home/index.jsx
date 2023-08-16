@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export default function HomePage(props) {
   return (
     <>
-      <div id="home" className="bg-slate-700 h-[calc(100vh)] w-full">
+      <section ref={props.sectionRef} id="home" className="bg-slate-700 h-[calc(100vh)] w-full">
         <div className="flex justify-center items-center mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-full">
           <div className="w-[80%] flex max-sm:flex-col-reverse flex-row justify-between items-center">
             <div className="flex flex-col justify-center text-left text-5xl">
@@ -90,7 +90,7 @@ export default function HomePage() {
             {/* <p>Welcome to AzzBAN Web Portfolio</p> */}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
