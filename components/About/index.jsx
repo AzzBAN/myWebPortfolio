@@ -12,7 +12,7 @@ export default function About(props) {
                 <h3 className="font-bold text-4xl">I&apos;m Azhar</h3>
                 <h5>Fullstack Developer</h5>
                 <p className="mt-5">
-                  I am a Full-Stack developer based in Bandung, Indonesia. I am an Information Technology undergraduate from Telkom University. I am very passionate about improving my coding skills & developing applications & websites. I
+                  I am a Full-Stack developer based in Bandung, Indonesia. I am an Computer Science undergraduate from Telkom University. I am very passionate about improving my coding skills & developing applications & websites. I
                   build WebApps and Websites using Next JS. Working for myself to improve my skills. Love to build Full-Stack clones.
                 </p>
                 <p className="mt-3">
